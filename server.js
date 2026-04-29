@@ -3,7 +3,6 @@ const multer = require('multer');
 const path = require('path');     
 const app = express();
 const PORT = 3000;
-
 const aturanPenyimpanan = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, './uploads'); 
@@ -21,7 +20,7 @@ app.post('/upload-profil', upload.single('inifoto'), (req, res) => {
             return res.status(400).json({ pesan: "Tolong pilih foto terlebih dahulu!" });
         }
         res.status(200).json({
-            pesan: "Foto profil berhasil diunggah!",
+            pesan: "Foto berhasil diunggah!",
             nama_file_asli: req.file.originalname,
             nama_file_baru: req.file.filename,
             ukuran: req.file.size + " bytes"
