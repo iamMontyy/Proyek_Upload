@@ -15,8 +15,7 @@ const aturanPenyimpanan = multer.diskStorage({
 });
 const upload = multer({ storage: aturanPenyimpanan });
 
-
-app.post('/upload-profil', upload.single('pasfoto'), (req, res) => {
+app.post('/upload-profil', upload.single('inifoto'), (req, res) => {
     try {
         if (!req.file) {
             return res.status(400).json({ pesan: "Tolong pilih foto terlebih dahulu!" });
@@ -29,9 +28,11 @@ app.post('/upload-profil', upload.single('pasfoto'), (req, res) => {
         });
     } catch (error) {
         console.error(error);
-        res.status(500).json({ pesan: "Terjadi kesalahan saat mengunggah foto profil!" });
+        res.status(500).json({ pesan: "Gagal saat mengunggah foto profil!" });
     }
 });
 app.listen(PORT, () => {
-    console.log(`Server Upload berjalan di http://localhost:${PORT}`);
+    console.log(`Server berjalan di http://localhost:${PORT}`);
 });
+
+
