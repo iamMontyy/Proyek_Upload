@@ -28,7 +28,7 @@ app.post('/upload-profil', upload.single('inifoto'), (req, res) => {
         });
     } catch (error) {
         console.error(error);
-        res.status(500).json({ pesan: "Gagal saat mengunggah foto profil!" });
+        res.status(500).json({ pesan: "Gagal saat mengunggah foto!" });
     }
 });
 app.listen(PORT, () => {
