@@ -20,7 +20,7 @@ app.post('/upload-profil', upload.single('inifoto'), (req, res) => {
             return res.status(400).json({ pesan: "Tolong pilih foto terlebih dahulu!" });
         }
         res.status(200).json({
-            pesan: "Foto berhasil diunggah!",
+            pesan: "Foto berhasil diunggah kawan!",
             nama_file_asli: req.file.originalname,
             nama_file_baru: req.file.filename,
             ukuran: req.file.size + " bytes"
